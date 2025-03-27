@@ -17,6 +17,9 @@
   /* Typography */
   font-size: 13px;
   font-family: "Manrope", sans-serif;
+
+  /* Variable */
+  --bor-radius: 0.725rem;
 }
 
 /* manrope-500 - latin */
@@ -50,7 +53,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1.65fr;
   background-color: var(--white);
-  border-radius: 8px;
+  border-radius: var(--bor-radius);
   overflow: hidden;
 }
 
@@ -127,4 +130,18 @@ h2 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* SHARE CONTAINER */
+.share-container-active {
+  display: flex;
+  align-items: center;
+  background-color: var(--v-drk-gray-blue);
+  padding: 1.25em 2.4em;
+  column-gap: 1em;
+  color: var(--gray-blue);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.55rem;
+  border-radius: var(--bor-radius);
 }
