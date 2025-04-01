@@ -54,7 +54,7 @@ body {
   grid-template-columns: 1fr 1.65fr;
   background-color: var(--white);
   border-radius: var(--bor-radius);
-  overflow: hidden;
+  position: relative;
 }
 
 .card-container h1,
@@ -94,6 +94,10 @@ h2 {
   background-image: url("./images/drawers.jpg");
   background-size: auto 100%;
   background-origin: content-box;
+  /* FIXME: Need to be Modified */
+  border-radius: var(--bor-radius);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .details-grid-container {
   display: grid;
@@ -110,7 +114,7 @@ h2 {
 }
 
 .content {
-  line-height: 1.77;
+  line-height: 1.55;
 }
 
 .profile-details-name {
@@ -123,6 +127,7 @@ h2 {
   background-color: var(--lgt-gray-blue);
   border-radius: 3rem;
   position: relative;
+  transition: 0.3s ease-in-out;
 }
 
 .share-icon {
@@ -130,6 +135,14 @@ h2 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.share-container:hover {
+  background-color: var(--desat-drk-blue);
+}
+
+.share-container:hover .share-icon {
+  filter: brightness(60);
 }
 
 /* SHARE CONTAINER */
@@ -144,4 +157,23 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.55rem;
   border-radius: var(--bor-radius);
+}
+
+.share-card {
+  position: absolute;
+  bottom: 100px;
+  right: -65px;
+}
+
+.share-card:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-top: 12.5px solid var(--v-drk-gray-blue);
 }
